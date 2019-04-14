@@ -1,0 +1,24 @@
+<h1>Categories</h1>
+
+<table class="table">
+<th>ID</td>
+<th>Name</td>
+<th>Action</td>
+
+
+<?php foreach ($categories as $key => $value) : ?>
+
+<tr>
+	<td><?= ($value[id_article_category]); ?></td>
+	<td><?= ($value[name]); ?></td>
+	<td><a href="articlescategoryeditor/<?= ($value[id_article_category]); ?>">Edit</a></td>
+
+</tr>
+
+<?php endforeach ?>
+</table>
+
+
+
+
+

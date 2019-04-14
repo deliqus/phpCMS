@@ -1,0 +1,20 @@
+
+	<h3>Categories</h3>
+	
+	<?php foreach ($categories as $category): ?>
+	<a href="/articles?id_article_category=<?= $category['id_article_category'] ?>"><?= $category['name'] ?></a>
+	<?php endforeach ?>
+	<h3>Articles</h3>
+
+	<?php foreach ($articles as $article) : ?>
+	<div class="article">
+	<div class="img">
+	</div>
+		<div class="text">
+			<h2><a href="articles/<?= $article['url'] ?>"><?= $article['title'] ?></a></h2>
+			<?= $article['description'] ?>
+		</div>
+	</div>
+	<?php endforeach ?>
+
+

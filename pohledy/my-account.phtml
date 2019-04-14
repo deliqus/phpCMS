@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-4">
+        <p>Přihlášeni jako <?= $login ?></p>
+        <p>First Name: <?= $firstname ?></p>
+        <p>Last Name: <?= $lastname ?></p>
+    </div>
+    <div class="col-4">
+        <img src="<?= $image_path ?>" height="100px" width="100px" />
+    </div>
+</div>
+
+<div class="row">
+    <a href="my-account/edit">Edit profile</a>
+</div>
+<?php if (!$admin) : ?>
+    <p>Nemáte administrátorská oprávnění, požádejte administrátora webu, aby vám je přidělil.</p>
+
+
+<?php endif ?>
+

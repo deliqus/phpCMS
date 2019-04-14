@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+	<head>
+		<base href="/localhost" />
+		<meta charset="UTF-8" />
+		<title><?= $titulek ?></title>
+
+		<meta name="description" content="<?= $popis ?>" />
+		<meta name="keywords" content="<?= $klicova_slova ?>" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="css/custom.css">
+		<script src="/js/main.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	</head>
+
+	<body>
+			<div id="header" class="bg-grey">
+				<div class="logo">
+					<img src="images/layout/logo.svg">
+				</div>
+				<nav>
+					<ul id="menu" class="nav test">
+						<li class="nav-item"><a class="nav-link" href="article/uvod">Úvod</a></li>
+						<li class="nav-item"><a class="nav-link" href="articles">Články</a></li>
+						<li class="nav-item"><a class="nav-link" href="kontakt">Kontakt</a></li>					
+
+				<?php
+					if($_SESSION['user']){ ?>
+						<li class="nav-item"><a class="nav-link" href="/my-account">My account</a> </li>
+						<li class="nav-item"><a class="nav-link" href="/admin/">Administrace</a> </li>
+						<li class="nav-item"><a class="nav-link" href="my-account/logout">Odhlásit</a> </li>
+						<?php
+
+					}else{ ?>
+						<li class="nav-item"><a class="nav-link" href="/registrace">Registrace</a> </li>
+						<li class="nav-item"><a class="nav-link" href="/login">Přihlásit</a> </li>
+				<?php } ?>
+					</ul>
+				</nav>
+				<div class="hamburger">
+					<a class="toggle-menu" onclick="turnOnMobileMenu()">X</a>
+				</div>
+			</div>
+			<div class="content">
+							<?php foreach ($zpravy as $zprava) : ?>
+									<?php echo htmlspecialchars_decode($zprava) ?>
+							<?php endforeach ?>
+								<?php $this->controller->vypisPohled(); // vložení aktuálního pohledu do šablony ?>
+			</div>
+		
+        <footer>
+			<div id="footer">
+				<p>Copyright
+				<a href="administrace">Administrace</a></p>
+			</div>
+		</footer>
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<!-- <script src="js/bootstrap.min.js"></script> -->
+	</body>
+</html>

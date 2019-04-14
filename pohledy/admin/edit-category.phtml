@@ -1,0 +1,11 @@
+<h1>Edit category</h1>
+
+<form method="post">
+	<input type="hidden" name="id_article_category" value="<?= $category['id_article_category'] ?>" />
+	<div class="form-group">
+			<label for="name">Category name</label>
+			<input id="name" type="text" name="name" value="<?= $category['name'] ?>" class="form-control" /><br />
+	</div>
+	<input type="submit" value="Save" class="btn btn-primary" />
+</form>
+

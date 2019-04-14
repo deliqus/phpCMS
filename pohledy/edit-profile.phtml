@@ -1,0 +1,33 @@
+<p>Přihlášeni jako <?= $login ?></p>
+<?php if (!$admin) : ?>
+    <p>Nemáte administrátorská oprávnění, požádejte administrátora webu, aby vám je přidělil.</p>
+
+
+<?php endif ?>
+
+
+<h1>Edit profile</h1>
+
+<header>
+	<h1><?= $login ?></h1>
+</header>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+		<label for="firstname">First name</label>
+		<input id="firstname" type="name" name="firstname" class="form-control" required="required" value="<?php if (isset($firstname)) echo($firstname); ?>" />
+	</div>
+	<div class="form-group">
+		<label for="lastname">Last name</label>
+		<input id="lastname" type="name" name="lastname" class="form-control" required="required" value="<?php if (isset($lastname)) echo($lastname); ?>" />
+    </div>
+    <div class="form-group">
+		<label for="email">Email address</label>
+		<input id="email" type="email" name="email" class="form-control" value="<?php if (isset($email)) echo($email); ?>" />
+    </div>
+    <div class="form-group">
+        <label for="file">My Photo</label>
+        <input type="file" class="form-control-file" id="file" name="file">
+    </div>
+    <input type="submit" class="btn btn-primary" value="Update" />
+</form>
